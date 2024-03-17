@@ -1,5 +1,9 @@
 <?php
     session_start();
+    $db_server_name =  'localhost';
+    $db_username = 'nosa';
+    $db_password = 'password';
+    $db_name = 'novaradb';
 
     $con = mysqli_connect($db_server_name, $db_username, $db_password, $db_name);
 
@@ -22,9 +26,17 @@
     function select($sql, $values, $datatypes) {
         $con = $GLOBALS['con'];
         if( $stmt = mysqli_prepare($con, $sql)) {
-            mysqli_stat_bind_params($stmt, $datatypes, ...$values);
+            mysqli_stmt_bind_param($stmt, $datatypes, ...$values);
+            if(mysqli_stmt_execute($stmt)) {
+                $res = mysqli_stmt_get_result($stmt);
+                mysqli_stmt_close($stmt);
+                return $res;
+            } else {
+                mysqli_stmt_close($stmt);
+                die("Query cannot be executed ");
+            }
         } else {
-            die('Query cannot be executed - Select');
+            die('Query cannot be prepared - Select');
         }
     }
 ?>

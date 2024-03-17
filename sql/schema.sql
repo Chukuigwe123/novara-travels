@@ -1,18 +1,32 @@
-CREATE TABLE 'customer' (
-    `customer_id`    int(11) PRIMARY KEY     NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `customer` (
+    `cid`    int PRIMARY KEY   NOT NULL AUTO_INCREMENT,
     `firstname` varchar(100)        NOT NULL,
     `lastname`  varchar(100)        NOT NULL,
     `dob`       DATE                NOT NULL,
     `nationality`   varchar(100)    NOT NULL,
     `email` varchar(100)            NOT NULL,
-    `password` varchar(150)         NOT NULL,
-)
+    `password` varchar(150)         NOT NULL
+);
 
-CREATE TABLE 'booking' (
+CREATE TABLE IF NOT EXISTS `booking` (
     `booking_id`    int(11)     PRIMARY KEY     NOT NULL    AUTO_INCREMENT,
-    `destination` cvar
-    `source`
-    `date`  DATE NOT NULL
-    `fliht type`
-    `flight means`
-)
+    `cid` init NOT NULL,
+    `destination` varchar(100) NOT NULL,
+    `source`    varchar(100) NOT NULL,
+    `date`  DATE NOT NULL,
+    `booking_type` ENUM ('ONE-WAY') DEFAULT 'ONE-WAY',
+    `transportation_means` ENUM ('FLIGHT', 'TRAIN') DEFAULT 'FLIGHT'
+);
+
+--
+-- Add foreign key to booking to create one to many relationship between customer and booking
+--
+ALTER TABLE `booking` ADD CONSTRAINT `booking_customer__fk` FOREIGN KEY (`cid`) REFERENCES `customer` (`cid`) ON DELETE CASCADE;
+
+
+--
+-- Test Data for customer
+--
+
+INSERT INTO `customer` (`cid`, `lastname`, `firstname`, `dob`, `nationality`, `email`, `password`) VALUES
+(1, 'testlastname', 'testFirstname', '2017-06-18 10:03:07', 'Nigerian', 'test@gmai.com', 'password');
