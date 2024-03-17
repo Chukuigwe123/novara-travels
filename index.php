@@ -1,48 +1,19 @@
+<?php 
+  session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible"content="IE=edge">
       <meta name="viewport"content="width=device-width,initial-scale=1.0">
+      <?php require('./inc/header.php')?>
       <title> Nova Travels - Book your next destination </title>
-      <link rel="stylesheet" href="./assets/css/main.css">
-      <!--Bootstrap Link-->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-      <!--Font Awesome cdn-->
-      <link rel="stylesheet"href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css>
-      <!--Google fonts-->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+
 
   </head>
   <body>
-    <!--Navbar start-->
-    <nav class="navbar navbar-expand-lg" id="navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/" id="logo"><span>N</span>ova Travels</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-          <span><i class="fa-solid fa-bars"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#about-us">About us </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact-us">Contact Us</a>
-            </li>
-          </ul>
-          <div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
-            <ul>
-              <li><a href="./pages/login.html">Login </a></li>
-              <li><a href="./pages/signup.html">Signup</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!--Navbar end-->
+    <?php require('./inc/navbar.php') ?>
     <!--Home Section start-->
     <div class="home">
       <div class="content">
@@ -106,9 +77,6 @@
       </div>
     </div>
     <!--Home Section ends-->
-
-
-
     <!-- About Us Section starts-->
     <section class="container w-75 mx-auto py-5" id="about-us">
       <h2> About us </h2>
@@ -158,40 +126,7 @@
       </div>
     
     </section>
-    <!-- Footer section starts -->
-    <footer>
-      <hr>
-        <section class="footer"> 
-          <div class="social">
-              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> </a>
-              <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> </a>
-              <a href="https://twitter.com/"><i class="fab fa-twitter"></i> </a>
-              <a href="https://www.snapchat.com/"><i class="fab fa-snapchat"></i> </a>
-          </div>
-          <ul>
-              <li>
-                  <a href="#">Home</a>
-              </li>
-              <li>
-                  <a href="#">Services</a>
-              </li>
-              <li>
-                  <a href="#">About</a>
-              </li>
-              <li>
-                  <a href="#">Terms</a>
-              </li>
-              <li>
-                  <a href="#">Privacy Policy</a>
-              </li>
-          </ul>
-          <p class="copyright">
-              NOVA TRAVELS(c)2024
-          </p>
-        </section>
-    </footer>
-    <!--footer end-->
+    <?php require('./inc/footer.php') ?>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="./assets/scripts.js"> </script>
+  <?php require('./inc/script.php') ?>
 </html>
