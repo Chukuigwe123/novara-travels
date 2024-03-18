@@ -8,12 +8,12 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible"content="IE=edge">
       <meta name="viewport"content="width=device-width,initial-scale=1.0">
-      <?php require('./inc/header.php')?>
+      <?php require('inc/header.php')?>
       <title> Nova Travels - Book your next destination </title>
-      <link rel="stylesheet" href="./assets/css/auth.css">
+      <link rel="stylesheet" href="assets/css/auth.css">
   </head>
   <body>
-    <?php require('./inc/navbar.php') ?>
+    <?php require('inc/navbar.php') ?>
     <!-- login form section starts-->
     <section class="form-container">
           <form method="POST">
@@ -43,7 +43,7 @@
                 session_start();
                 $_SESSION['isAuthenticated'] = true;
                 $_SESSION['customerId'] = $row['cid'];
-                redirect('/dashboard.php');
+                redirect('dashboard.php');
               } else {
                 echo ' 
                     <div class="alert alert-warning" role="alert">
