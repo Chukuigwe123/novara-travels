@@ -1,6 +1,10 @@
 <?php 
   require('./inc/db_config.php');
   require('./inc/utils.php');
+  session_start();
+  if(isset($_SESSION['isAuthenticated'])) {
+    header('Location: index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +46,7 @@
                 session_start();
                 $_SESSION['isAuthenticated'] = true;
                 $_SESSION['customerId'] = $row['cid'];
+                $_SESSION['firstname'] = $row['firstname'];
                 redirect('dashboard.php');
               } else {
                 echo ' 

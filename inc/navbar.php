@@ -12,13 +12,27 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php#contact-us">Contact Us</a>
             </li>
+            <?php 
+              if(isset($_SESSION['isAuthenticated'])) {
+                echo '<li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">My Tickets</a>
+                  </li>';
+              }
+            ?>
           </ul>
-          <div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
-            <ul>
-              <li><a href="login.php">Login </a></li>
-              <li><a href="signup.php">Signup</a></li>
-            </ul>
-          </div>
+          <?php 
+              if(!isset($_SESSION['isAuthenticated'])) {
+                echo '<div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
+                <ul>
+                  <li><a href="login.php">Login </a></li>
+                  <li><a href="signup.php">Signup</a></li>
+                </ul>
+              </div>';
+              } else {
+                echo "<a href='./inc/logout.php'>Logout </a>";
+              }
+            ?>
+
         </div>
       </div>
     </nav>
