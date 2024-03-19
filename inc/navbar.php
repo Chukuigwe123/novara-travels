@@ -1,6 +1,3 @@
-<?php 
-  session_start()
-?>
 <nav class="navbar navbar-expand-lg" id="navbar">
       <div class="container">
         <a class="navbar-brand" href="/" id="logo"><span>N</span>ova Travels</a>
@@ -23,12 +20,19 @@
               }
             ?>
           </ul>
-          <div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
-            <ul>
-              <li><a href="login.php">Login </a></li>
-              <li><a href="signup.php">Signup</a></li>
-            </ul>
-          </div>
+          <?php 
+              if(!isset($_SESSION['isAuthenticated'])) {
+                echo '<div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
+                <ul>
+                  <li><a href="login.php">Login </a></li>
+                  <li><a href="signup.php">Signup</a></li>
+                </ul>
+              </div>';
+              } else {
+                echo "<a href='./inc/logout.php'>Logout </a>";
+              }
+            ?>
+
         </div>
       </div>
     </nav>

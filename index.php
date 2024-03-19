@@ -1,6 +1,6 @@
 <?php 
-  session_start()
-  
+  session_start();
+  $insert_alert = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +10,21 @@
       <meta name="viewport"content="width=device-width,initial-scale=1.0">
       <?php require('./inc/header.php')?>
       <title> Nova Travels - Book your next destination </title>
+      <script>
+          if ( window.history.replaceState ) {
+            window.history.replaceState(null, null, window.locanadaion.href)
+          }
+      </script>
   </head>
   <body>
     <?php require('./inc/navbar.php') ?>
     <!--Home Section start-->
     <div class="home">
+      <?php 
+        if($insert_alert) {
+          echo " You have successully booked a ticket";
+        };
+      ?>
       <div class="content">
           <h5>Welcome To Nova Travels</h5>
           <h1>Visit <span class="changecontent"></span></h1>
@@ -31,47 +41,17 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form class="d-flex flex-column flex-md-row" action="#">
-              <div class="d-flex flex-column">
-                <span> From </span>
-                <input type="text"  /> 
-              </div>
-              <div class="d-flex flex-column">
-                <span> To </span>
-                <input type="text"  /> 
-              </div>
-              <div>
-                <span> Depature </span>
-                <input type="date"class="form-control"placeholder="Date"required>
-              </div>
-              <div>
-                <span> Return </span>
-                <input type="date"class="form-control"placeholder="Date"required>
-              </div>
-              <input type="submit"value="Book Now"class ="submit"required>
-            </form>
+            <?php require ('./inc/book-form.php') ?>
           </div>
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <form class="d-flex flex-column flex-md-row" action="#">
-              <div class="d-flex flex-column">
-                <span> From </span>
-                <input type="text"  /> 
-              </div>
-              <div class="d-flex flex-column">
-                <span> To </span>
-                <input type="text"  /> 
-              </div>
-              <div>
-                <span> Depature </span>
-                <input type="date"class="form-control"placeholder="Date"required>
-              </div>
-              <div>
-                <span> Return </span>
-                <input type="date"class="form-control"placeholder="Date"required>
-              </div>
-              <input type="submit"value="Book Now"class ="submit"required>
-            </form>
+            <?php require ('./inc/book-form.php') ?>
           </div>
+            <?php
+            if(isset($_POST['book-ticket'])) {
+                echo "
+            ";
+            }
+            ?>
         </div>
       </div>
     </div>
