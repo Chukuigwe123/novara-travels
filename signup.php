@@ -1,5 +1,6 @@
 <?php 
-  session_start()
+  require('./inc/db_config.php');
+  require('./inc/utils.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +14,9 @@
   </head>
   <body>
       <?php require('./inc/navbar.php') ?>
-        <!-- login form section starts-->
+        <!-- signin form section starts-->
         <section class="form-container">
-            <form action="signup.php" method="get">
+            <form method="POST">
               <h2> Novara Travels </h2>
               <hr />
               <h3> Sign Up </h3>
@@ -37,13 +38,42 @@
               </div>
               <div class="d-flex flex-column"> 
                 <span> Confirm Password </span>
-                <input type="password" name="confirm_password" />
-            </div>
-              <input type="submit" value=" Sign Up" /> 
+                <input type="password" name="confirm-password" />
+              </div>
+              <button name="signup" type="submit"> Sign Up </button> 
               <hr />
               <span> Forgot password </span>
   
             </form>
+            <?php
+              if(isset($_POST['signup'])) {
+                // collect data from from and sanitize inputs
+                $from_data = filteration($_POST);
+                //  verify if user email is unique
+                $verify_query = "SELECT email FROM customer WHERE `email` =?";
+                $res = select($verify_query , [$from_data['email']], "s");
+                if($res->num_rows==1) {
+                  echo '
+                    <div class="alert alert-warning" role="alert">
+                      user already exists
+                    </div>
+                    ';
+                } else {
+                  // run query to create users
+                  $values = [
+                    $from_data['email'],
+                    $from_data['firstname'],
+                    $from_data['lastname'],
+                    $from_data['password']
+                  ];
+                  $register_query  = "INSERT INTO customer (`email`,`lastname`, `firstname`, `password`) VALUES
+                  (?, ?, ?, ?)";
+                  $res = select($register_query, $values, "ssss");
+                  echo $res;
+                  redirect('login.php');
+                }
+              }
+            ?>
             <div> Already Have an account? <span><a href="./login.php"> Login </a></span></div>
       </section>
       <!-- login from section ends-->
@@ -51,7 +81,3 @@
   </body>
   <?php require('./inc/script.php') ?>
 </html>
-
-<?php 
- echo "{$_GET["email"]}"
-?>

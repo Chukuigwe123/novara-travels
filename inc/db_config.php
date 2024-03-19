@@ -1,8 +1,8 @@
 <?php
     session_start();
     $db_server_name =  'localhost';
-    $db_username = 'root';
-    $db_password = '';
+    $db_username = 'nosa';
+    $db_password = 'password';
     $db_name = 'novaradb';
 
     $con = mysqli_connect($db_server_name, $db_username, $db_password, $db_name);
@@ -29,6 +29,7 @@
             mysqli_stmt_bind_param($stmt, $datatypes, ...$values);
             if(mysqli_stmt_execute($stmt)) {
                 $res = mysqli_stmt_get_result($stmt);
+                // echo $res;
                 mysqli_stmt_close($stmt);
                 return $res;
             } else {
