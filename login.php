@@ -32,9 +32,8 @@
           </form>
           <?php 
             if(isset($_POST['login'])) {
+              // collect data from from and sanitize inputs
               $from_data = filteration($_POST);
-              // $checkIfUserExist = "SELECT EXISTS(SELECT 1 FROM customers where email = $from_data)";
-              
               $query = "SELECT * FROM customer where `email` =? AND `password` =? ";
               $values = [$from_data['email'], $from_data['password']];
               $res = select($query, $values, "ss");
