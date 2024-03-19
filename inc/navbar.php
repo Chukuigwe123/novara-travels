@@ -1,3 +1,6 @@
+<?php 
+  session_start()
+?>
 <nav class="navbar navbar-expand-lg" id="navbar">
       <div class="container">
         <a class="navbar-brand" href="/" id="logo"><span>N</span>ova Travels</a>
@@ -12,6 +15,13 @@
             <li class="nav-item">
               <a class="nav-link" href="index.php#contact-us">Contact Us</a>
             </li>
+            <?php 
+              if(isset($_SESSION['isAuthenticated'])) {
+                echo '<li class="nav-item">
+                    <a class="nav-link" href="dashboard.php">My Tickets</a>
+                  </li>';
+              }
+            ?>
           </ul>
           <div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
             <ul>
