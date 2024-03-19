@@ -40,4 +40,3 @@
             die('Query cannot be prepared - Select');
         }
     }
-?>

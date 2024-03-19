@@ -1,5 +1,6 @@
 <?php 
-  session_start();
+  require('./inc/db_config.php');
+  require('./inc/utils.php');
   $insert_alert = false;
 ?>
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
       <title> Nova Travels - Book your next destination </title>
       <script>
           if ( window.history.replaceState ) {
-            window.history.replaceState(null, null, window.locanadaion.href)
+            window.history.replaceState(null, null, window.location.href)
           }
       </script>
   </head>
@@ -22,7 +23,12 @@
     <div class="home">
       <?php 
         if($insert_alert) {
-          echo " You have successully booked a ticket";
+          echo <<<HTML
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You have successully booked a ticket
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+         HTML; 
         };
       ?>
       <div class="content">
@@ -30,7 +36,7 @@
           <h1>Visit <span class="changecontent"></span></h1>
           <p> Let's Discover your next trip </p>
       </div>
-      <div class="w-75 mx-auto book">
+      <div class="w-75 mx-auto book" id="book">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"> Book a Flight</button>
@@ -47,9 +53,24 @@
             <?php require ('./inc/book-form.php') ?>
           </div>
             <?php
-            if(isset($_POST['book-ticket'])) {
-                echo "
-            ";
+            if(isset($_POST['book'])) {
+                $form_data = filteration($_POST);
+                $values = [
+                  $form_data['firstname'],
+                  $form_data['lastname'],
+                  $form_data['dob'],
+                  $form_data['nationality'],
+                  $form_data['destination'],
+                  $form_data['origin'],
+                  $form_data['arrival_date'],
+                  $form_data['depature_date'],
+                  $form_data['booking_type'],
+                  $_SESSION['customerId']
+                ];
+                $create_booking_query = "INSERT INTO booking ( `firstname`, `lastname`, `dob`, `nationality`, `destination`, `origin`, `arrival_date`, `depature_date`, `booking_type`, `cid`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                $res = select($create_booking_query, $values, "ssssssssss");
+                $insert_alert = true;
+
             }
             ?>
         </div>

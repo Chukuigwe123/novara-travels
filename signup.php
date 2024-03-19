@@ -1,7 +1,6 @@
 <?php 
   require('./inc/db_config.php');
   require('./inc/utils.php');
-  session_start();
   if(isset($_SESSION['isAuthenticated'])) {
     header('Location: index.php');
   }
@@ -73,7 +72,6 @@
                   $register_query  = "INSERT INTO customer (`email`,`lastname`, `firstname`, `password`) VALUES
                   (?, ?, ?, ?)";
                   $res = select($register_query, $values, "ssss");
-                  echo $res;
                   redirect('login.php');
                 }
               }

@@ -2,20 +2,23 @@ CREATE TABLE IF NOT EXISTS `customer` (
     `cid`    int PRIMARY KEY   NOT NULL AUTO_INCREMENT,
     `firstname` varchar(100)        NOT NULL,
     `lastname`  varchar(100)        NOT NULL,
-    `dob`       DATE                NULL,
-    `nationality`   varchar(100)    NULL,
     `email` varchar(100)            NOT NULL,
     `password` varchar(150)         NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `booking` (
     `booking_id`    int(11)     PRIMARY KEY     NOT NULL    AUTO_INCREMENT,
-    `cid` init NOT NULL,
+    `cid` int NOT NULL,
     `destination` varchar(100) NOT NULL,
-    `source`    varchar(100) NOT NULL,
-    `date`  DATE NOT NULL,
+    `origin`    varchar(100) NOT NULL,
+    `depature_date`  DATE NOT NULL,
+    `arrival_date`  DATE NOT NULL,
     `booking_type` ENUM ('ONE-WAY') DEFAULT 'ONE-WAY',
-    `transportation_means` ENUM ('FLIGHT', 'TRAIN') DEFAULT 'FLIGHT'
+    `transportation_means` ENUM ('FLIGHT', 'TRAIN') DEFAULT 'FLIGHT',
+    `firstname` varchar(100)        NOT NULL,
+    `lastname`  varchar(100)        NOT NULL,
+    `dob`       DATE                NULL,
+    `nationality`   varchar(100)    NULL
 );
 
 --
