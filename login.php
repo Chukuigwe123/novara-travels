@@ -1,7 +1,6 @@
 <?php 
   require('./inc/db_config.php');
   require('./inc/utils.php');
-  session_start();
   if(isset($_SESSION['isAuthenticated'])) {
     header('Location: index.php');
   }
