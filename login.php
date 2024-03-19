@@ -42,6 +42,7 @@
                 session_start();
                 $_SESSION['isAuthenticated'] = true;
                 $_SESSION['customerId'] = $row['cid'];
+                $_SESSION['firstname'] = $row['firstname'];
                 redirect('dashboard.php');
               } else {
                 echo ' 
