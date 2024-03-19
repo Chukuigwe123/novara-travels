@@ -47,7 +47,6 @@ color:#ffa500;
     background: orange;
     color:white;
 }
-
 .navbar .dropdown ul {
     display: block;
     position: absolute;
@@ -68,15 +67,12 @@ color:#ffa500;
   top: 100%;
   visibility: visible;
 }
-
-
 .dropdown-toggle::after {
     display: none !important; 
 }
 .navbar .dropdown-active {
     display: block;
 }
-
 /* Navbar end*/
 
 /* home section*/
@@ -148,7 +144,6 @@ color:#ffa500;
     display: grid;
     justify-content: center;
 }
-
 /*section book end*/
 
 /*footer start*/
@@ -206,4 +201,11 @@ color:#ffa500;
   text-align: center;
   font-size: 13px;
   color: hsl(0, 84%, 47%);
+}
+
+/* Utilities */
+.button {
+    height: fit-content;
+    padding: 5px 10px;
+    
 }

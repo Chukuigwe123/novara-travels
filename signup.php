@@ -1,6 +1,10 @@
 <?php 
   require('./inc/db_config.php');
   require('./inc/utils.php');
+  session_start();
+  if(isset($_SESSION['isAuthenticated'])) {
+    header('Location: index.php');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +24,7 @@
               <h2> Novara Travels </h2>
               <hr />
               <h3> Sign Up </h3>
-              <div class="d-flex flex-column"> 
+                <div class="d-flex flex-column"> 
                 <span> First Name </span>
                 <input type="text" name="firstname" />
                 </div>
