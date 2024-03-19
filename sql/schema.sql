@@ -2,8 +2,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
     `cid`    int PRIMARY KEY   NOT NULL AUTO_INCREMENT,
     `firstname` varchar(100)        NOT NULL,
     `lastname`  varchar(100)        NOT NULL,
-    `dob`       DATE                NOT NULL,
-    `nationality`   varchar(100)    NOT NULL,
+    `dob`       DATE                NULL,
+    `nationality`   varchar(100)    NULL,
     `email` varchar(100)            NOT NULL,
     `password` varchar(150)         NOT NULL
 );
@@ -28,5 +28,5 @@ ALTER TABLE `booking` ADD CONSTRAINT `booking_customer__fk` FOREIGN KEY (`cid`) 
 -- Test Data for customer
 --
 
-INSERT INTO `customer` (`cid`, `lastname`, `firstname`, `dob`, `nationality`, `email`, `password`) VALUES
-(1, 'testlastname', 'testFirstname', '2017-06-18 10:03:07', 'Nigerian', 'test@gmai.com', 'password');
+INSERT INTO `customer` ( `lastname`, `firstname`, `dob`, `nationality`, `email`, `password`) VALUES
+('testlastname', 'testFirstname', '2017-06-18 10:03:07', 'Nigerian', 'test@gmai.com', 'password');
