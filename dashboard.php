@@ -1,5 +1,5 @@
-<?php 
-  session_start();
+<?php
+  require('./inc/db_config.php');
   if(!isset($_SESSION['isAuthenticated'])) {
     header('Location: index.php');
   }
@@ -16,7 +16,8 @@
     <?php require('inc/navbar.php') ?>
 
     <?php 
-            $firstname = $_SESSION['firstname']; 
+            $firstname = $_SESSION['firstname'];
+            $cid = $_SESSION['customerId'];
             //   if(isset($_SESSION['isAuthenticated'])) {
                 echo "<p class='nav-item'>
                     welcome, $firstname
@@ -24,5 +25,6 @@
             //   }
     ?>
     <div> You are logged In </div>
+    <a href="index.php#book"> Book Now</a>
 </body>
 </html>
