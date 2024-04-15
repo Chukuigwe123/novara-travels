@@ -76,8 +76,53 @@
         </div>
       </div>
     </div>
+
+    <!-- Package Section -->
+    <div class="container mx-auto gap-5 py-5 row">
+          <div class="card col" style="width: 18rem;">
+              <img class="card-img-top" src="./assets/imgs/background.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">New York</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rate ">
+
+
+              <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+              </div>
+              </div>
+              </div>  
+          </div>
+          <div class="card col" style="width: 18rem;">
+              <img class="card-img-top" src="./assets/imgs/france.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"> France </h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                
+            <div class="rate ">
+
+
+                <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                </div>
+            </div>
+              </div>  
+          </div>
+          <div class="card col" style="width: 18rem;">
+              <img class="card-img-top" src="./assets/imgs/uk.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">United Kingdom</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="rate ">
+
+
+            <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+            </div>
+            </div>
+              </div>  
+          </div>
+    </div>
     <!--Home Section ends-->
     <!-- About Us Section starts-->
+  
     <section class="container w-75 mx-auto py-5" id="about-us">
       <h2> About us </h2>
       <div class="d-flex flex-column flex-md-row justify-content-between">
@@ -91,41 +136,66 @@
       </div>
     </section>
     <!-- About Us Section ends-->
-    <section id="contact-us" class="container w-75 mx-auto py-5" >
-      <h2> Contact us </h2>
-      <div class="d-flex flex-column flex-md-row justify-content-between">
-        <p>
-          We are with you all the way. Contact us for more information
-        </p>
+   <!-- Contact Us Section Starts -->
+   <div class="container">
+    <div class="row">
+      <div class="col-md-12 contact-header">
+        <h2>Contact Us</h2>
+        <p>Any question or remarks? just leave us a message!</p>
+      </div>
+      <div class="col-md-5 contact-detail">
+        <h2>Contact Information</h2>
+        <div class="basic-info">
+          <ul>
+            <li><i class="fas fa-phone-alt"></i> +234 70459332</li>
+            <li><i class="fas fa-envelope"></i>info@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> UK </li>
+          </ul>
+
+        </div>
+        <div class="social-icons">
+          <ul>
+            <li><i class="fab fa-facebook"></i></li>
+            <li><i class="fab fa-youtube"></i></li>
+            <li><i class="fab fa-whatsapp"></i></li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="col-md-7 contact-form">
         <form>
-          <div>
-            <span>
-              Your Name 
-            </span>
-            <input type="text" />
+          <div class="row message-form">
+            <!--      first col        -->
+            <div class="col-md-6">
+              <label for="exampleInputEmail1" class="form-label f-label">First Name</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="col-md-6"><label for="exampleInputEmail2" class="form-label">Last Name</label>
+              <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+            </div>
+            <!--        second col      -->
+            <div class="col-md-6">
+              <label for="exampleInputEmail3" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="exampleInputEmail3" aria-describedby="emailHelp">
+            </div>
+      
+    
+            <!--       third col       -->
+            <div class="col-md-12">
+
+              <label for="exampleFormControlTextarea1" class="form-label">Write Messages</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="col-md-12 submit-message">
+              <button type="submit" class="btn btn-warning">Send Message</button>
+            </div>
           </div>
-          <div>
-            <span>
-              Your Email 
-            </span>
-            <input type="text" />
-          </div>
-          <div>
-            <span>
-              Subject 
-            </span>
-            <input type="text" />
-          </div>
-          <div>
-            <span>
-              Message
-            </span>
-            <input type="text" />
-          </div>
+
         </form>
       </div>
-    
-    </section>
+    </div>
+  </div>
     <?php require('./inc/footer.php') ?>
   </body>
   <?php require('./inc/script.php') ?>

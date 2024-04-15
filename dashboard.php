@@ -40,7 +40,7 @@
                   if($row['transportation_means'] === 'FLIGHT'){
                   echo '<img src="./assets/imgs/plane.jpg" class="card-img-top" alt="flight">';
                   } else {
-                  echo '<img src="./assets/imgs/background.jpg" class="card-img-top" alt="train">';
+                  echo '<img src="./assets/imgs/train.jpg" class="card-img-top" alt="train">';
                   }
                   echo '<div class="row">';
                     echo '<div class="col fw-bold">';
