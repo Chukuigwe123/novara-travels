@@ -78,6 +78,7 @@
     </div>
 
     <!-- Package Section -->
+    <h3><br>Packages Available</h3> 
     <div class="container mx-auto gap-5 py-5 row">
           <div class="card col" style="width: 18rem;">
               <img class="card-img-top" src="./assets/imgs/background.jpg" alt="Card image cap">
@@ -127,7 +128,7 @@
       <h2> About us </h2>
       <div class="d-flex flex-column flex-md-row justify-content-between">
         <div>
-          <p> Novara Travels ofefer the best prices for flights and train tickets to you next destination </p>
+          <p> Novara Travels offers the best prices for flights and train tickets to you next destination </p>
         </div>
         <div>
           <h2> Popula destination </h2>

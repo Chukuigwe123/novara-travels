@@ -1,7 +1,7 @@
 <?php
     session_start();
     $db_server_name =  'localhost';
-    $db_username = 'nosa';
+    $db_username = 'akan';
     $db_password = 'password';
     $db_name = 'novaradb';
 
