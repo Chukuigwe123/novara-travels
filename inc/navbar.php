@@ -22,14 +22,18 @@
           </ul>
           <?php 
               if(!isset($_SESSION['isAuthenticated'])) {
-                echo '<div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
-                <ul>
-                  <li><a href="login.php">Login </a></li>
-                  <li><a href="signup.php">Signup</a></li>
+                echo '
+                <ul class="d-flex gap-5">
+                  <li><a href="login.php" class="btn btn-gray">Login </a></li>
+                  <li><a href="signup.php" class="btn">Signup</a></li>
                 </ul>
-              </div>';
+              ';
               } else {
-                echo "<a href='./inc/logout.php'>Logout </a>";
+                echo '
+                <div class="dropdown"><a href="#"><i class="fa-solid fa-user"></i></a>
+                  <a href="./inc/logout.php">Logout </a>
+                </div>
+                ';
               }
             ?>
 

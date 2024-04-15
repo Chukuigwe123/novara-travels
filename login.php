@@ -40,6 +40,7 @@
               $query = "SELECT * FROM customer where `email` =? AND `password` =? ";
               $values = [$from_data['email'], $from_data['password']];
               $res = select($query, $values, "ss");
+            
               if($res->num_rows ==1 ) {
                 $row = mysqli_fetch_assoc($res);
                 session_start();
