@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `booking` (
     `origin`    varchar(100) NOT NULL,
     `depature_date`  DATE NOT NULL,
     `arrival_date`  DATE NOT NULL,
-    `booking_type` ENUM ('ONE-WAY') DEFAULT 'ONE-WAY',
+    `booking_type` ENUM ('ONE-WAY', 'RETURN') DEFAULT 'ONE-WAY',
     `transportation_means` ENUM ('FLIGHT', 'TRAIN') DEFAULT 'FLIGHT',
     `firstname` varchar(100)        NOT NULL,
     `lastname`  varchar(100)        NOT NULL,

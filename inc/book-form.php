@@ -38,8 +38,8 @@
         } else {
             echo <<<HTML
                 <div>
-                    <p> Manage your booking easily and securely </p>
-                <a href="login.php" class="btn btn-secondary"> Login </a>
+                    <p>To Manage your booking easily and securely </p>
+                <a href="login.php"  class="btn btn-dark btn-secondary"> Login </a>
                 </div>
                 HTML;
         }
