@@ -10,7 +10,7 @@
       <meta http-equiv="X-UA-Compatible"content="IE=edge">
       <meta name="viewport"content="width=device-width,initial-scale=1.0">
       <?php require('./inc/header.php')?>
-      <title> Nova Travels - Book your next destination </title>
+      <title> Novara Travels - Book your next destination </title>
       <script>
           if ( window.history.replaceState ) {
             window.history.replaceState(null, null, window.location.href)
@@ -32,7 +32,7 @@
         };
       ?>
       <div class="content">
-          <h5>Welcome To Nova Travels</h5>
+          <h5>Welcome To Novara Travels</h5>
           <h1>Visit <span class="changecontent"></span></h1>
           <p> Let's Discover your next trip </p>
       </div>
@@ -148,7 +148,7 @@
         <h2>Contact Information</h2>
         <div class="basic-info">
           <ul>
-            <li><i class="fas fa-phone-alt"></i> +234 70459332</li>
+            <li><i class="fas fa-phone-alt"></i> +44 7708433612</li>
             <li><i class="fas fa-envelope"></i>info@gmail.com</li>
             <li><i class="fas fa-map-marker-alt"></i> UK </li>
           </ul>
