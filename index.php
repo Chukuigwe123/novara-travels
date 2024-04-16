@@ -70,7 +70,7 @@
                 $create_booking_query = "INSERT INTO booking ( `firstname`, `lastname`, `dob`, `nationality`, `destination`, `origin`, `arrival_date`, `depature_date`, `booking_type`, `cid`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $res = select($create_booking_query, $values, "ssssssssss");
                 $insert_alert = true;
-
+                redirect('dashboard.php');
             }
             ?>
         </div>
@@ -131,7 +131,7 @@
         </div>
         <div>
           <h2> Popula destination </h2>
-          image lside
+      
           </div>
       </div>
     </section>
@@ -169,10 +169,10 @@
             <!--      first col        -->
             <div class="col-md-6">
               <label for="exampleInputEmail1" class="form-label f-label">First Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             </div>
             <div class="col-md-6"><label for="exampleInputEmail2" class="form-label">Last Name</label>
-              <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
             </div>
             <!--        second col      -->
             <div class="col-md-6">
