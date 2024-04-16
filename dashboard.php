@@ -33,57 +33,53 @@
           $res = select($query, $values, "s" );
           $res_array = [];
           if ($res->num_rows > 0) {
-            echo '<div class="d-flex gap-4 tickets-container">';
+            echo '<div class="d-flex flex-wrap gap-4 tickets-container">';
             while($row=$res->fetch_assoc()) {
-              echo '<div>';
+          
                 echo '<div class="card" style="width: 18rem;">';
                   if($row['transportation_means'] === 'FLIGHT'){
-                  echo '<img src="./assets/imgs/plane.jpg" class="card-img-top" alt="flight">';
+                  echo '<img src="./assets/imgs/plane.jpg" class="card-img-top" alt="flight"/>';
                   } else {
-                  echo '<img src="./assets/imgs/train.jpg" class="card-img-top" alt="train">';
+                  echo '<img src="./assets/imgs/train.jpg" class="card-img-top" alt="train"/>';
                   }
                   echo '<div class="row">';
                     echo '<div class="col fw-bold">';
-                    echo 'ORIGIN';
+                      echo 'ORIGIN';
                     echo '</div>';
                     echo '<div class="col fw-bold">';
-                    echo 'DESTINATION';
+                      echo 'DESTINATION';
                     echo '</div>';
                   echo '</div>';
 
                   echo '<div class="row">';
                     echo '<div class="col">';
-                    echo $row['origin'];
+                      echo $row['origin'];
                     echo '</div>';
                     echo '<div class="col">';
-                    echo $row['destination'];
+                      echo $row['destination'];
                     echo '</div>';
                   echo '</div>';
 
 
                   echo '<div class="row">';
                     echo '<div class="col fw-bold">';
-                    echo 'DEPATURE DATE';
+                      echo 'DEPATURE DATE';
                     echo '</div>';
                     echo '<div class="col fw-bold">';
-                    echo 'ARRIVAL DATE';
+                      echo 'ARRIVAL DATE';
                     echo '</div>';
                   echo '</div>';
-
 
                   echo '<div class="row">';
-                    echo '<div class="col">';
-                    echo $row['depature_date'];
-                    echo '</div>';
-                    echo '<div class="col">';
-                    echo $row['arrival_date'];
-                    echo '</div>';
+                      echo '<div class="col">';
+                        echo $row['depature_date'];
+                      echo '</div>';
+                      echo '<div class="col">';
+                        echo $row['arrival_date'];
+                      echo '</div>';
                   echo '</div>';
-
-                  
-
-                  echo '<a href="ticket-detail.php?id="'. $row['booking_id']. '" class="btn btn-primary">Go to Ticket Detail</a>';
-                echo '</div';
+                  echo '<a href="ticket-detail.php?id='. $row['booking_id'] .'" class="btn btn-primary">Go to Ticket Detail</a>';
+             
               echo '</div>';
             }
             echo '</div>';

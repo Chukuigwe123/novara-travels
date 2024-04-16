@@ -70,7 +70,7 @@
                 $create_booking_query = "INSERT INTO booking ( `firstname`, `lastname`, `dob`, `nationality`, `destination`, `origin`, `arrival_date`, `depature_date`, `booking_type`, `cid`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 $res = select($create_booking_query, $values, "ssssssssss");
                 $insert_alert = true;
-
+                redirect('dashboard.php');
             }
             ?>
         </div>
