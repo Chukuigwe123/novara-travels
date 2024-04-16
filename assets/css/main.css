@@ -79,7 +79,7 @@ color:#ffa500;
 .home{
     width: 100%;
     padding-block: 5rem ;
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url("/assest/pictures/background1.jpg");
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)),url("../imgs/background1.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
