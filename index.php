@@ -10,7 +10,7 @@
       <meta http-equiv="X-UA-Compatible"content="IE=edge">
       <meta name="viewport"content="width=device-width,initial-scale=1.0">
       <?php require('./inc/header.php')?>
-      <title> Nova Travels - Book your next destination </title>
+      <title> Novara Travels - Book your next destination </title>
       <script>
           if ( window.history.replaceState ) {
             window.history.replaceState(null, null, window.location.href)
@@ -32,7 +32,7 @@
         };
       ?>
       <div class="content">
-          <h5>Welcome To Nova Travels</h5>
+          <h5>Welcome To Novara Travels</h5>
           <h1>Visit <span class="changecontent"></span></h1>
           <p> Let's Discover your next trip </p>
       </div>
@@ -78,47 +78,55 @@
     </div>
 
     <!-- Package Section -->
-    <div class="container mx-auto gap-5 py-5 row">
-          <div class="card col" style="width: 18rem;">
-              <img class="card-img-top" src="./assets/imgs/background.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">New York</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rate ">
+    <div class="container mx-auto">
+    <h3 class="text-center"><br>Packages Available</h3> 
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search Packages" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">Search</span>
+      </div>
+      <div class="container mx-auto gap-5 py-5 row">
+            <div class="card col" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/imgs/background.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">New York</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="rate ">
+
+
+                <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                </div>
+                </div>
+                </div>  
+            </div>
+            <div class="card col" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/imgs/france.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"> France </h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  
+              <div class="rate ">
+
+
+                  <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                  </div>
+              </div>
+                </div>  
+            </div>
+            <div class="card col" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/imgs/uk.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">United Kingdom</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="rate ">
 
 
               <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
               </div>
               </div>
-              </div>  
-          </div>
-          <div class="card col" style="width: 18rem;">
-              <img class="card-img-top" src="./assets/imgs/france.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"> France </h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-            <div class="rate ">
-
-
-                <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-                </div>
+                </div>  
             </div>
-              </div>  
-          </div>
-          <div class="card col" style="width: 18rem;">
-              <img class="card-img-top" src="./assets/imgs/uk.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">United Kingdom</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="rate ">
-
-
-            <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
-            </div>
-            </div>
-              </div>  
-          </div>
+      </div>
     </div>
     <!--Home Section ends-->
     <!-- About Us Section starts-->
@@ -127,12 +135,12 @@
       <h2> About us </h2>
       <div class="d-flex flex-column flex-md-row justify-content-between">
         <div>
-          <p> Novara Travels ofefer the best prices for flights and train tickets to you next destination </p>
+          <p> Novara Travels offers the best prices for flights and train tickets to you next destination </p>
         </div>
-        <div>
+        <!-- <div>
           <h2> Popula destination </h2>
       
-          </div>
+          </div> -->
       </div>
     </section>
     <!-- About Us Section ends-->
@@ -147,7 +155,7 @@
         <h2>Contact Information</h2>
         <div class="basic-info">
           <ul>
-            <li><i class="fas fa-phone-alt"></i> +234 70459332</li>
+            <li><i class="fas fa-phone-alt"></i> +44 7708433612</li>
             <li><i class="fas fa-envelope"></i>info@gmail.com</li>
             <li><i class="fas fa-map-marker-alt"></i> UK </li>
           </ul>
